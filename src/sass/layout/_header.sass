@@ -1,0 +1,51 @@
+.header
+    max-width: 130rem
+    height: 14rem
+    background: $color-white
+    margin: 0 auto
+    margin-bottom: 2rem
+
+.header-top
+    height: 8rem
+    display: grid
+    grid-template-columns: 22rem 1fr max-content
+    grid-galp: 13rem
+    align-items: center
+    &__info
+        justify-self: center
+        display: grid
+        grid-template-columns: repeat(3, min-content)
+        grid-gap: 4.5rem
+    &__title
+        font-family: '_Circe'
+        font-style: normal
+        font-weight: 700
+        font-size: 14px
+        line-height: 140%
+        letter-spacing: 0.02em
+        text-transform: uppercase
+        color: $color-red
+
+.header-btm
+    height: 8rem
+    display: grid
+    grid-template-columns: min-content 1fr
+    justify-items: end
+    align-items: center
+    &__list
+        list-style: none
+        text-decoration: none
+        display: grid
+        grid-template-columns: repeat(9, max-content)
+        grid-gap: 2rem
+        margin: 0
+        padding: 0
+    &__item
+        font-family: '_Circe'
+        font-style: normal
+        font-weight: 700
+        font-size: 14px
+        line-height: 140%
+        letter-spacing: 0.02em
+        text-transform: uppercase
+        color: $color-black

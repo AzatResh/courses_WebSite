@@ -1,0 +1,41 @@
+.footer
+    background: rgba($color-black, 0.05) 
+    &__container
+        max-width: 129.6rem
+        margin: 0 auto
+        padding: 6rem 0
+        display: grid
+        grid-template-columns: 22rem repeat(4, 20rem)
+        grid-gap: 7rem
+    &__icons
+        display: grid
+        grid-template-rows: repeat(3, min-content)
+        grid-gap: 2rem
+
+    &__second
+        display: grid
+        grid-template-rows: repeat(2, min-content)
+        grid-gap: 2.5rem
+    &__list
+        display: grid
+        grid-template-rows: repeat(auto-fit, min-content)
+        grid-gap: 1.5rem
+        list-style: none
+        text-decoration: none
+    &__link
+        display: inline-block
+        color: $color-black
+        font-style: normal
+        font-weight: 400
+        font-size: 14px
+        line-height: 140%
+        transition: all 0.5s
+        &:hover
+            color: $color-red
+            transform: translateY(-0.5rem)
+            
+    
+    &__third
+        display: grid
+        grid-template-rows: repeat(2, min-content)
+        grid-gap: 4rem

@@ -1,0 +1,37 @@
+.card-img
+    width: 306px
+    display: grid
+    grid-template-rows: 200px 118px 209px 1fr
+    align-items: center
+    justify-items: center
+    &_big
+        width: 410px
+        grid-template-rows: 250px 98px 118px 1fr
+    &_three-element
+        grid-template-rows: 102px 192px 1fr
+    &__block
+        width: 87%
+    &__title
+        text-align: center
+    &__list
+        align-self: start
+        list-style: none
+    &__item
+        display: grid
+        grid-template-columns: min-content 1fr
+        &:not(:last-child)
+            margin-bottom: 1rem
+    &__text
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 140%
+    &__dot
+        display: inline-block
+        width: 15px
+        height: 15px
+        font-size: 24px
+        text-align: center
+        padding-right: 1rem
+        transform: translateY(-.6rem)
+            
