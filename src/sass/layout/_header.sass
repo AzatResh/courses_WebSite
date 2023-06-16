@@ -29,7 +29,7 @@
 .header-btm
     height: 8rem
     display: grid
-    grid-template-columns: min-content 1fr
+    grid-template-columns: min-content 1fr min-content
     justify-items: end
     align-items: center
     &__list
@@ -40,6 +40,13 @@
         grid-gap: 2rem
         margin: 0
         padding: 0
+        @include respond(tab-land)
+            grid-template-columns: repeat(5, max-content)
+            padding-right: 2rem
+        @include respond(tab-port)
+            grid-template-columns: repeat(3, max-content)
+        @include respond(phone)
+            display: block
     &__item
         font-family: '_Circe'
         font-style: normal
@@ -48,4 +55,83 @@
         line-height: 140%
         letter-spacing: 0.02em
         text-transform: uppercase
-        color: $color-black
+        color: $color-black            
+        @include respond(tab-land)
+            &:nth-child(n+6)
+                display: none
+        @include respond(tab-port)
+            &:nth-child(n+4)
+                display: none
+        @include respond(phone)
+            display: none
+
+.navigation
+    display: none
+    background: none
+    border: none
+    position: relative
+    margin-right: 1rem
+    z-index: 2
+    @include respond(tab-land)
+        display: inline-block
+    &__toggle
+        display: none
+    &__icon
+        transform: translateY(-1.2rem)
+        display: inline-block
+        position: relative
+        margin-top: 2.9rem
+        transition: all .5s
+        &,
+        &::before,
+        &::after
+            display: inline-block
+            width: 3rem
+            height: .3rem
+            background: $color-black
+        &::before,
+        &::after
+            content: ""
+            position: absolute
+            left: 0
+            transition: .5s all
+        &::before
+            top: -.8rem
+        &::after
+            top: .8rem
+    &__info
+        display: none
+        position: absolute
+        right: 0
+        background: $color-white
+        padding: 1rem 2rem
+        box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.1))
+    &__item
+        display: none
+        font-style: normal
+        font-weight: 700
+        font-size: 14px
+        line-height: 140%
+        letter-spacing: 0.02em
+        text-transform: uppercase
+        color: $color-black     
+        &:not(:last-child)
+            margin-bottom: .5rem
+             
+        @include respond(tab-land)
+            &:nth-child(n+6)
+                display: inline-block
+        @include respond(tab-port)
+            &:nth-child(n+4)
+                display: inline-block
+        @include respond(phone)
+            display: inline-block
+
+    &__toggle:checked ~&__info
+        display: block
+    &__toggle:checked + &__button &__icon 
+        background: $color-red
+        &::before,
+        &::after
+            background: $color-red
+        
