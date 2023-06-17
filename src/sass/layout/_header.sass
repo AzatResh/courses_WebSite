@@ -1,21 +1,23 @@
 .header
     max-width: 130rem
-    height: 14rem
     background: $color-white
     margin: 0 auto
-    margin-bottom: 2rem
 
 .header-top
     height: 8rem
     display: grid
     grid-template-columns: 22rem 1fr max-content
-    grid-galp: 13rem
     align-items: center
+    @include respond(tab-port)
+        display: flex
+        justify-content: space-between
     &__info
         justify-self: center
         display: grid
         grid-template-columns: repeat(3, min-content)
         grid-gap: 4.5rem
+        @include respond(tab-port)
+            display: none
     &__title
         font-family: '_Circe'
         font-style: normal
@@ -25,6 +27,12 @@
         letter-spacing: 0.02em
         text-transform: uppercase
         color: $color-red
+        @include respond(tab-port)
+            width: 40rem
+        @include respond(phone)
+            width: 52rem
+    &__btn
+        justify-self: right
 
 .header-btm
     height: 8rem
@@ -64,7 +72,17 @@
                 display: none
         @include respond(phone)
             display: none
-
+    &__link
+        color: $color-black
+        text-decoration: none
+        transition: all .4s
+        &:hover
+            text-decoration: none
+            color: $color-red
+    &__logo
+        @include respond(phone)
+            height: 40px
+            
 .navigation
     display: none
     background: none
@@ -74,6 +92,8 @@
     z-index: 2
     @include respond(tab-land)
         display: inline-block
+    &__button
+        cursor: pointer
     &__toggle
         display: none
     &__icon
@@ -86,8 +106,8 @@
         &::before,
         &::after
             display: inline-block
-            width: 3rem
-            height: .3rem
+            width: 30px
+            height: 3px
             background: $color-black
         &::before,
         &::after
@@ -96,9 +116,9 @@
             left: 0
             transition: .5s all
         &::before
-            top: -.8rem
+            top: -8px
         &::after
-            top: .8rem
+            top: 8px
     &__info
         display: none
         position: absolute
@@ -106,6 +126,7 @@
         background: $color-white
         padding: 1rem 2rem
         box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.1))
+    
     &__item
         display: none
         font-style: normal

@@ -1,22 +1,88 @@
 .carousel-block
     width: 100%
     &__img
-        height: 37vw
-        background:  center/cover no-repeat
+        height: 70rem
+        &_first
+            background: url(../img/carousel-1.jpg) center/cover no-repeat
+        &_second
+            background: url(../img/carousel-2.jpg) center/cover no-repeat
+    &__about
+        position: absolute
+        top: 20rem
+        left: 29.8rem
+        width: 58.6rem
+        height: 41.8rem
+        @include respond(tab-land)
+            top: 16rem
+            left: 17rem
+        @include respond(tab-port)
+
+        @include respond(phone)
+            top: 1rem
+            left: 11rem
+    &__info
+        width: 586px
+        height: 310px
+        background: rgba(51, 51, 51, 0.5)
+        padding: 1.5rem 3rem
+        margin-bottom: 5rem
+        @include respond(tab-land)
+            width: 510px
+            margin-bottom: 2rem
+        @include respond(tab-port)
+            width: 390px
+            height: 250px
+        @include respond(phone)
+            width: 365px
+            height: 273px
+            margin-bottom: 1rem
+    &__button
+        position: absolute
+        height: 7rem
+        width: 7rem
+        background: $color-red
+        top: 31.5rem
+        opacity: 1
+        &_left
+            left: 15rem
+            @include respond(tab-land)
+                left: 5rem
+            @include respond(tab-port)
+                left: 2rem
+        &_right
+            right: 15rem
+            @include respond(tab-land)
+                right: 5rem
+            @include respond(tab-port)
+                right: 2rem
+
+    &__arrow
+        font-size: 24px
+        font-weight: 100
+
 
 .school
     max-width: 120rem
     position: relative
     height: 79rem
     margin: 0 auto
+    @include respond(tab-port)
+        height: 96rem
+    @include respond(phone)
+        height: 140rem
     &__square
         position: absolute
         width: 64rem
-        height: 40.5rem
         left: 8rem
         top: 19rem
         border: 10px solid $color-red
         padding: 7.6rem 8rem 6.6rem 8rem
+        @include respond(tab-land)
+            padding: 7.6rem 8rem 3.6rem 8rem
+        @include respond(phone)
+            width: 95%
+            left: 1rem
+            padding: 5.6rem 3rem 3.6rem 6rem
     &__title
         position: absolute
         display: block
@@ -24,6 +90,13 @@
         left: 6rem
         background: $color-white
         padding: 1rem 3rem
+        @include respond(tab-port)
+            top: -6rem
+            left: 5rem
+            padding: 1rem .5rem
+        @include respond(phone)
+            top: -8rem
+            left: 3rem
     &__text
         font-family: '_Circe'
         font-style: normal
@@ -65,6 +138,8 @@
         grid-template-columns: repeat(4, 1fr)
         grid-gap: 2.4rem
         margin-bottom: 10rem
+        @include respond(phone)
+            grid-template-columns: repeat(2, 1fr)
     &__language
         text-align: center
     &__language-link
@@ -76,42 +151,3 @@
 
     &__table
         margin-bottom: 15rem
-
-.exams
-    max-width: 129.6rem
-    margin: 0 auto
-    margin-bottom: 15rem
-    &__title
-        text-align: center
-        margin-bottom: 10rem
-    &__cards
-        display: grid
-        grid-template-columns: repeat(auto-fit, minmax(27.6rem, 1fr))
-        grid-gap: 2.5rem 2.5rem
-        justify-items: center
-    
-.events
-    max-width: 129.6rem
-    margin: 0 auto
-    margin-bottom: 15rem
-    &__title
-        text-align: center
-        margin-bottom: 10rem
-    &__cards
-        display: grid
-        grid-template-columns: repeat(auto-fit, minmax(41rem, 1fr))
-        grid-gap: 2.5rem 2.5rem
-        justify-items: center
-
-.news
-    max-width: 129.6rem
-    margin: 0 auto
-    margin-bottom: 15rem
-    &__title
-        text-align: center
-        margin-bottom: 10rem
-    &__cards
-        display: grid
-        grid-template-columns: repeat(auto-fit, minmax(27.6rem, 1fr))
-        grid-gap: 2.5rem 2.5rem
-        justify-items: center
